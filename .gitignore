@@ -1,0 +1,70 @@
+# Visual Studio local settings and caches
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+ipch/
+*.VC.db
+*.VC.db-shm
+*.VC.db-wal
+*.VC.opendb
+*.sdf
+*.opensdf
+*.opendb
+*.aps
+
+# Build output directories (all configurations and platforms)
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Bb]in/
+[Oo]bj/
+[Bb]uild/
+[Oo]ut/
+
+# C++ intermediate and compiled files
+*.obj
+*.pch
+*.pdb
+*.ipdb
+*.iobj
+*.ilk
+*.idb
+*.tlog
+*.lastbuildstate
+*.res
+*.exp
+*.exe
+*.dll
+*.lib
+*.recipe
+
+# Profiling and diagnostic output
+*.vsp
+*.vspx
+*.psess
+*.etl
+*.dmp
+
+# Visual Studio upgrade reports and backups
+_UpgradeReport_Files/
+UpgradeLog*.XML
+UpgradeLog*.htm
+Backup*/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CMakeUserPresets.json
+CTestTestfile.cmake
+
+# Keep solution and project definitions under version control:
+# *.sln, *.slnx, *.vcxproj, *.vcxproj.filters
