@@ -1,19 +1,23 @@
-#pragma once
+﻿#pragma once
 
-#include "../fsm/StateMachine.h"
+#include "../fsm/AIModel.h"
 
 namespace prototype
 {
-// Integration placeholder only: this is not a scenario character.
-struct Context final
+// Replace this neutral model with a scenario character later.
+// Update and the typed transition functions are inherited from AIModel.
+class Context final : public fsm::AIModel<Context>
 {
-    Context() noexcept : machine(*this) {}
-
+public:
+    Context();
     // Add character data or a reference to the scenario world here later.
-    fsm::StateMachine<Context> machine;
+    int wood = 0;
+    int work_length = 0;
+    int stamina = 10;
+    int coin = 0;
 };
 
-class StateA final : public fsm::State<Context>
+class Go_To_Work final : public fsm::State<Context>
 {
 public:
     [[nodiscard]] std::string_view Name() const noexcept override;
@@ -22,7 +26,16 @@ public:
     void Exit(Context& owner) noexcept override;
 };
 
-class StateB final : public fsm::State<Context>
+class WoodCutting final : public fsm::State<Context>
+{
+public:
+    [[nodiscard]] std::string_view Name() const noexcept override;
+    void Enter(Context& owner) noexcept override;
+    void Execute(Context& owner) noexcept override;
+    void Exit(Context& owner) noexcept override;
+};
+
+class Go_To_Sell final : public fsm::State<Context>
 {
 public:
     [[nodiscard]] std::string_view Name() const noexcept override;

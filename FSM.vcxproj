@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="fsm\State.h" />
     <ClInclude Include="fsm\StateMachine.h" />
+    <ClInclude Include="fsm\AIModel.h" />
     <ClInclude Include="prototype\Prototype.h" />
   </ItemGroup>
   <ItemGroup>
