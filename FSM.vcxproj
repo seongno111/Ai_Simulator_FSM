@@ -143,7 +143,18 @@
     </Manifest>
   </ItemDefinitionGroup>
 
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fsm\State.h" />
+    <ClInclude Include="fsm\StateMachine.h" />
+    <ClInclude Include="prototype\Prototype.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="prototype\Prototype.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
