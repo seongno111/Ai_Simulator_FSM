@@ -24,7 +24,10 @@
     <ClInclude Include="fsm\AIModel.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="prototype\Prototype.h">
+    <ClInclude Include="prototype\WoodCutter.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Seller.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,7 +35,10 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="prototype\Prototype.cpp">
+    <ClCompile Include="prototype\WoodCutter.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Seller.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

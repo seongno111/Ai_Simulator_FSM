@@ -2,14 +2,21 @@
 
 #include "../fsm/AIModel.h"
 
-namespace prototype
+namespace Seller
+{
+    class Context;
+}
+
+namespace WoodCutter
 {
 // Replace this neutral model with a scenario character later.
 // Update and the typed transition functions are inherited from AIModel.
 class Context final : public fsm::AIModel<Context>
 {
 public:
-    Context();
+    explicit Context(Seller::Context& seller);
+    // Non-owning reference: the seller must outlive this woodcutter.
+    Seller::Context& seller;
     // Add character data or a reference to the scenario world here later.
     int wood = 0;
     int work_length = 0;
