@@ -1,19 +1,23 @@
 ﻿#include "prototype/WoodCutter.h"
 #include "Seller.h"
+#include "TavernKeeper.h"
 
 #include <cstdio>
 
 int main()
 {
     // The model constructor creates all states and enters the initial state.
-    // Create the seller first so it outlives the woodcutter's reference.
+    // Both shopkeepers must outlive the woodcutter's references.
     Seller::Context seller;
-    WoodCutter::Context woodCutter(seller);
+    TavernKeeper::Context tavernKeeper;
+    WoodCutter::Context woodCutter(seller, tavernKeeper);
 
-    // These manual steps illustrate the API, without choosing a scenario.
-    for (int i = 0; i < 40; i++) {
+    // Each loop is one tick. Run long enough to observe repeated visits.
+    for (int i = 0; i < 100; i++) {
+        std::printf("\n--- Tick %d ---\n", i + 1);
         (void)woodCutter.Update();
         (void)seller.Update();
+        (void)tavernKeeper.Update();
     }
 
     return 0;

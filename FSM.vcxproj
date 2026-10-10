@@ -144,11 +144,13 @@
     <ClInclude Include="fsm\AIModel.h" />
     <ClInclude Include="prototype\WoodCutter.h" />
     <ClInclude Include="Seller.h" />
+    <ClInclude Include="TavernKeeper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="prototype\WoodCutter.cpp" />
     <ClCompile Include="Seller.cpp" />
+    <ClCompile Include="TavernKeeper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
