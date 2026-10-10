@@ -49,7 +49,7 @@ bool Context::ServeDrink(WoodCutter::Context& visitor) noexcept
 std::string_view WashingDishes::Name() const noexcept { return "WashingDishes"; }
 void WashingDishes::Enter(Context& owner) noexcept
 {
-    std::cout << "주점 주인: 설거지를 하자. 현재 진행도 " << owner.dishProgress << "/5" << std::endl;
+    std::cout << "주점 주인: 설거지를 해야겠어." << std::endl;
 }
 void WashingDishes::Execute(Context& owner) noexcept
 {
@@ -67,7 +67,7 @@ void WashingDishes::Exit(Context&) noexcept {}
 std::string_view Cleaning::Name() const noexcept { return "Cleaning"; }
 void Cleaning::Enter(Context& owner) noexcept
 {
-    std::cout << "주점 주인: 주점을 청소하자. 현재 진행도 " << owner.cleaningProgress << "/10" << std::endl;
+    std::cout << "주점 주인: 이제 청소를 해야겠군. " << std::endl;
 }
 void Cleaning::Execute(Context& owner) noexcept
 {

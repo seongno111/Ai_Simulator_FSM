@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2010" viewBox="0 0 1800 2010">
+<rect width="1800" height="2010" fill="#F3F6FA"/>
+<text x="50" y="73" font-family="Malgun Gothic, sans-serif" font-size="38" font-weight="700" fill="#172B46">03  Behavior Tree + Blackboard</text>
+<text x="50" y="117" font-family="Malgun Gothic, sans-serif" font-size="22" font-weight="400" fill="#566982">트리 구조는 실제 생성자 구성 기준. 인물별 Update는 한 틱에 최대 한 개의 Action 본문을 실행한다.</text>
+<rect x="40" y="155" width="1720" height="76" rx="14" fill="#E8EEF6" stroke="#DAE2EC" stroke-width="2"/>
+<text x="65" y="191" font-family="Malgun Gothic, sans-serif" font-size="22" font-weight="400" fill="#172B46">REP 반복   ·   SEQ 순차 실행   ·   SEL 후보 선택   ·   PRI 우선 조건 재검사   ·   ? 조건   ·   A 행동</text>
+<text x="65" y="218" font-family="Malgun Gothic, sans-serif" font-size="17" font-weight="400" fill="#566982">Running: 계속 실행 / Success: 완료 / Failure: 다음 후보 또는 실패 처리</text>
+<rect x="40" y="260" width="510" height="1250" rx="14" fill="#FFFFFF" stroke="#DAE2EC" stroke-width="2"/>
+<text x="60" y="307" font-family="Malgun Gothic, sans-serif" font-size="27" font-weight="700" fill="#2765B0">나무꾼</text>
+<rect x="60" y="350" width="470" height="64" rx="8" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="70" y="375" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#2765B0">REP  하루 행동 반복</text>
+<text x="70" y="399" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">완료하면 다시 출근</text>
+<polyline points="73,404 73,464 88,464" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="88" y="438" width="442" height="64" rx="8" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="98" y="463" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#2765B0">SEQ  순서대로 실행</text>
+<text x="98" y="487" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">Running 자식 위치 기억</text>
+<polyline points="101,492 101,552 116,552" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="116" y="526" width="414" height="64" rx="8" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="126" y="551" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#2765B0">A  출근</text>
+<text x="126" y="575" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">거리 5 → 다음 틱 완료</text>
+<polyline points="101,492 101,640 116,640" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="116" y="614" width="414" height="64" rx="8" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="126" y="639" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#2765B0">A  벌목</text>
+<text x="126" y="663" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">체력 -1 / 나무 +1</text>
+<polyline points="101,492 101,728 116,728" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="116" y="702" width="414" height="64" rx="8" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="126" y="727" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#2765B0">A  판매</text>
+<text x="126" y="751" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">화장실이면 대기 / 코인 +5</text>
+<polyline points="101,492 101,816 116,816" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="116" y="790" width="414" height="64" rx="8" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="126" y="815" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#2765B0">A  주점 방문</text>
+<text x="126" y="839" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">방문 요청 설정 / 1행동</text>
+<polyline points="101,492 101,904 116,904" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="116" y="878" width="414" height="64" rx="8" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="126" y="903" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#2765B0">A  음주</text>
+<text x="126" y="927" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">코인 -5 / 취기 +5 → 20</text>
+<polyline points="101,492 101,992 116,992" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="116" y="966" width="414" height="64" rx="8" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="126" y="991" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#2765B0">A  취침</text>
+<text x="126" y="1015" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">5행동 → 취기 0 / 체력 10</text>
+<text x="65" y="1139" font-family="Malgun Gothic, sans-serif" font-size="19" font-weight="400" fill="#566982">판매·방문·음주 요청을 Shared에 기록</text>
+<text x="65" y="1167" font-family="Malgun Gothic, sans-serif" font-size="19" font-weight="400" fill="#566982">각 수치와 진행도는 Local에서 읽고 갱신</text>
+<text x="65" y="1195" font-family="Malgun Gothic, sans-serif" font-size="19" font-weight="400" fill="#566982">음주 행동에서 주점 주인 ServeDrink 호출</text>
+<rect x="570" y="260" width="660" height="1250" rx="14" fill="#FFFFFF" stroke="#DAE2EC" stroke-width="2"/>
+<text x="590" y="307" font-family="Malgun Gothic, sans-serif" font-size="27" font-weight="700" fill="#167769">상점주인</text>
+<rect x="590" y="350" width="620" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="600" y="375" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">PRI  Toilet ≥ 10 ?</text>
+<text x="600" y="399" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">최상위: 정상 트리 일시 중단·보존</text>
+<polyline points="603,404 603,464 618,464" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="618" y="438" width="592" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="628" y="463" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">A  화장실 [조건 참]</text>
+<text x="628" y="487" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">5행동 / Toilet=0 / 이용 여부 해제</text>
+<polyline points="603,404 603,552 618,552" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="618" y="526" width="592" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="628" y="551" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">SEQ  정상 행동 [조건 거짓]</text>
+<text x="628" y="575" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">중단된 위치에서 재개</text>
+<polyline points="631,580 631,640 646,640" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="646" y="614" width="564" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="656" y="639" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">A  개점</text>
+<text x="656" y="663" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">처음 1회</text>
+<polyline points="631,580 631,728 646,728" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="646" y="702" width="564" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="656" y="727" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">PRI  SellingWood ?</text>
+<text x="656" y="751" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">거래 진입 시 평상시 트리 Reset</text>
+<polyline points="659,756 659,816 674,816" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="674" y="790" width="536" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="684" y="815" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">A  구매 [조건 참]</text>
+<text x="684" y="839" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">판매 요청 동안 Running</text>
+<polyline points="659,756 659,904 674,904" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="674" y="878" width="536" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="684" y="903" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">REP  평상시 [조건 거짓]</text>
+<text x="684" y="927" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">거래 종료 후 영업부터 재시작</text>
+<polyline points="687,932 687,992 702,992" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="702" y="966" width="508" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="712" y="991" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">SEQ  영업 → 휴식</text>
+<polyline points="715,1020 715,1080 730,1080" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="730" y="1054" width="480" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="740" y="1079" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">A  영업</text>
+<text x="740" y="1103" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">졸림·흡연 욕구 +1 / 휴식 필요 시 완료</text>
+<polyline points="715,1020 715,1168 730,1168" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="730" y="1142" width="480" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="740" y="1167" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">SEL  수면 우선</text>
+<polyline points="743,1196 743,1256 758,1256" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="758" y="1230" width="452" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="768" y="1255" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">SEQ  ? Sleep &gt; 10 → A 수면</text>
+<text x="768" y="1279" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">수치 1씩 감소 / 0인 다음 행동 완료</text>
+<polyline points="743,1196 743,1344 758,1344" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="758" y="1318" width="452" height="64" rx="8" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="768" y="1343" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#167769">SEQ  ? Cigarette &gt; 5 → A 흡연</text>
+<text x="768" y="1367" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">시작 시 5 / 수치 1씩 감소</text>
+<text x="592" y="1449" font-family="Malgun Gothic, sans-serif" font-size="19" font-weight="400" fill="#B65C20">Update 전처리: 화장실 외 매 틱 Toilet +1</text>
+<rect x="1250" y="260" width="510" height="1250" rx="14" fill="#FFFFFF" stroke="#DAE2EC" stroke-width="2"/>
+<text x="1270" y="307" font-family="Malgun Gothic, sans-serif" font-size="27" font-weight="700" fill="#7251A3">주점 주인</text>
+<rect x="1270" y="350" width="470" height="64" rx="8" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="1280" y="375" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#7251A3">PRI  VisitingTavern ?</text>
+<text x="1280" y="399" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">작업 트리는 Reset하지 않고 보존</text>
+<polyline points="1283,404 1283,464 1298,464" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="1298" y="438" width="442" height="64" rx="8" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="1308" y="463" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#7251A3">A  손님 접대 [조건 참]</text>
+<text x="1308" y="487" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">Drinking 여부에 따라 대화</text>
+<polyline points="1283,404 1283,552 1298,552" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="1298" y="526" width="442" height="64" rx="8" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="1308" y="551" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#7251A3">REP  작업 [조건 거짓]</text>
+<text x="1308" y="575" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">손님 퇴장 시 이전 작업 재개</text>
+<polyline points="1311,580 1311,640 1326,640" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="1326" y="614" width="414" height="64" rx="8" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="1336" y="639" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#7251A3">SEQ  설거지 → 청소</text>
+<polyline points="1339,668 1339,728 1354,728" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="1354" y="702" width="386" height="64" rx="8" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="1364" y="727" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#7251A3">A  설거지</text>
+<text x="1364" y="751" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">5행동 → 진행도 0</text>
+<polyline points="1339,668 1339,816 1354,816" fill="none" stroke="#A9B8CA" stroke-width="3"/>
+<rect x="1354" y="790" width="386" height="64" rx="8" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="1364" y="815" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="700" fill="#7251A3">A  주점 청소</text>
+<text x="1364" y="839" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="400" fill="#566982">10행동 → 진행도 0</text>
+<text x="1275" y="1009" font-family="Malgun Gothic, sans-serif" font-size="19" font-weight="400" fill="#566982">접대 동안 작업 위치·진행도 보존</text>
+<text x="1275" y="1037" font-family="Malgun Gothic, sans-serif" font-size="19" font-weight="400" fill="#566982">퇴장 후 남은 작업부터 이어서 실행</text>
+<rect x="40" y="1540" width="1720" height="380" rx="14" fill="#FFFFFF" stroke="#DAE2EC" stroke-width="2"/>
+<text x="65" y="1587" font-family="Malgun Gothic, sans-serif" font-size="27" font-weight="700" fill="#7251A3">BLACKBOARD  |  데이터 저장과 인물 간 공유</text>
+<rect x="65" y="1620" width="1670" height="90" rx="14" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="80" y="1654" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#7251A3">Shared() — 세 인물이 같은 인스턴스를 참조</text>
+<text x="80" y="1685" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">나무꾼 기록 → SellingWood / VisitingTavern / Drinking     |     상점주인 기록 → SellerInToilet</text>
+<rect x="65" y="1740" width="510" height="115" rx="14" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="80" y="1774" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#2765B0">Local() — 나무꾼</text>
+<text x="80" y="1805" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Wood / WorkLength / Stamina / Coin</text>
+<text x="80" y="1832" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Intoxication / SleepProgress</text>
+<rect x="610" y="1740" width="535" height="115" rx="14" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="625" y="1774" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#167769">Local() — 상점주인</text>
+<text x="625" y="1805" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Sleep / Cigarette</text>
+<text x="625" y="1832" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Toilet / ToiletProgress</text>
+<rect x="1180" y="1740" width="555" height="115" rx="14" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="1195" y="1774" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#7251A3">Local() — 주점 주인</text>
+<text x="1195" y="1805" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">DishProgress / CleaningProgress</text>
+<text x="65" y="1895" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="400" fill="#566982">모든 행동·조건은 타입 키로 Get/Set. 트리 실행 위치는 노드가 기억하며, 블랙보드는 값을 저장한다.</text>
+<text x="50" y="1983" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#566982">현재 소스 기준 · 2026-10-11 · 실행 결과가 아닌 구조/호출 설명</text>
+</svg>

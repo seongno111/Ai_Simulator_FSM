@@ -63,11 +63,16 @@ void Go_To_Sell::Enter(Context& owner) noexcept
 {
     std::cout << "나무꾼: 이봐! 오늘 작업한 것 팔러왔어!" << std::endl;
     // Interrupt the seller's current activity, including sleep or smoking.
-    (void)owner.seller.ChangeState<Seller::Buying>();
+    owner.seller.BeginBuying();
 }
 void Go_To_Sell::Execute(Context& owner) noexcept
 {
     if (owner.wood > 0) {
+        if (!owner.seller.CanBuyWood())
+        {
+            std::cout << "나무꾼: 상점주인이 돌아올 때까지 기다려야겠군." << std::endl;
+            return;
+        }
         std::cout << "나무꾼: 아직 더 남았어 더 사라고(" << owner.wood << "/10)" << std::endl;
         owner.wood--;
         owner.coin += 5;
@@ -80,7 +85,7 @@ void Go_To_Sell::Execute(Context& owner) noexcept
 void Go_To_Sell::Exit(Context& owner) noexcept
 {
     std::cout << "나무꾼: 이제 " << owner.coin << "개의 코인이 있어!" << std::endl;
-    (void)owner.seller.ChangeState<Seller::Working>();
+    owner.seller.EndBuying();
 }
 
 std::string_view VisitTavern::Name() const noexcept { return "VisitTavern"; }

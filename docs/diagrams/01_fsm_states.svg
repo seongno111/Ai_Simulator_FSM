@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1690" viewBox="0 0 1800 1690">
+<rect width="1800" height="1690" fill="#F3F6FA"/>
+<text x="50" y="73" font-family="Malgun Gothic, sans-serif" font-size="38" font-weight="700" fill="#172B46">01  FSM 상태도</text>
+<text x="50" y="117" font-family="Malgun Gothic, sans-serif" font-size="22" font-weight="400" fill="#566982">실선: 상태 전환 · 점선: 공통 개입/복귀 · 화장실은 모든 일반 상태보다 우선</text>
+<rect x="35" y="150" width="1730" height="350" rx="14" fill="#FFFFFF" stroke="#DAE2EC" stroke-width="2"/>
+<text x="60" y="195" font-family="Malgun Gothic, sans-serif" font-size="27" font-weight="700" fill="#2765B0">나무꾼  |  작업 → 판매 → 주점 → 휴식</text>
+<rect x="75" y="245" width="240" height="115" rx="14" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="90" y="279" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#2765B0">출근</text>
+<text x="90" y="310" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Go_To_Work</text>
+<text x="90" y="337" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">거리 +1 (목표 5)</text>
+<rect x="360" y="245" width="240" height="115" rx="14" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="375" y="279" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#2765B0">벌목</text>
+<text x="375" y="310" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">WoodCutting</text>
+<text x="375" y="337" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">체력 -1 / 나무 +1</text>
+<rect x="645" y="245" width="240" height="115" rx="14" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="660" y="279" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#2765B0">판매</text>
+<text x="660" y="310" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Go_To_Sell</text>
+<text x="660" y="337" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">나무 -1 / 코인 +5</text>
+<rect x="930" y="245" width="240" height="115" rx="14" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="945" y="279" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#2765B0">주점 방문</text>
+<text x="945" y="310" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">VisitTavern</text>
+<text x="945" y="337" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">BeginVisit 호출</text>
+<rect x="1215" y="245" width="240" height="115" rx="14" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="1230" y="279" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#2765B0">음주</text>
+<text x="1230" y="310" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Drinking</text>
+<text x="1230" y="337" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">코인 -5 / 취기 +5</text>
+<rect x="1500" y="245" width="240" height="115" rx="14" fill="#FFFFFF" stroke="#2765B0" stroke-width="2"/>
+<text x="1515" y="279" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#2765B0">취침</text>
+<text x="1515" y="310" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Sleeping</text>
+<text x="1515" y="337" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">5회 행동</text>
+<polyline points="315,280 360,280" fill="none" stroke="#2765B0" stroke-width="3"/>
+<polygon points="360,280 348.2941876694152,285.654551943446 348.2941876694152,274.345448056554" fill="#2765B0"/>
+<text x="290" y="227" font-family="Malgun Gothic, sans-serif" font-size="17" font-weight="400" fill="#2765B0">거리 ≥ 5</text>
+<polyline points="600,280 645,280" fill="none" stroke="#2765B0" stroke-width="3"/>
+<polygon points="645,280 633.2941876694152,285.654551943446 633.2941876694152,274.345448056554" fill="#2765B0"/>
+<text x="575" y="227" font-family="Malgun Gothic, sans-serif" font-size="17" font-weight="400" fill="#2765B0">체력 = 0</text>
+<polyline points="885,280 930,280" fill="none" stroke="#2765B0" stroke-width="3"/>
+<polygon points="930,280 918.2941876694152,285.654551943446 918.2941876694152,274.345448056554" fill="#2765B0"/>
+<text x="860" y="227" font-family="Malgun Gothic, sans-serif" font-size="17" font-weight="400" fill="#2765B0">나무 = 0</text>
+<polyline points="1170,280 1215,280" fill="none" stroke="#2765B0" stroke-width="3"/>
+<polygon points="1215,280 1203.2941876694151,285.654551943446 1203.2941876694151,274.345448056554" fill="#2765B0"/>
+<text x="1145" y="227" font-family="Malgun Gothic, sans-serif" font-size="17" font-weight="400" fill="#2765B0">1회 행동</text>
+<polyline points="1455,280 1500,280" fill="none" stroke="#2765B0" stroke-width="3"/>
+<polygon points="1500,280 1488.2941876694151,285.654551943446 1488.2941876694151,274.345448056554" fill="#2765B0"/>
+<text x="1430" y="227" font-family="Malgun Gothic, sans-serif" font-size="17" font-weight="400" fill="#2765B0">취기 ≥ 20</text>
+<polyline points="1620,360 1620,408 195,408 195,360" fill="none" stroke="#2765B0" stroke-width="3"/>
+<polygon points="195,360 200.654551943446,371.7058123305848 189.345448056554,371.7058123305848" fill="#2765B0"/>
+<text x="465" y="436" font-family="Malgun Gothic, sans-serif" font-size="21" font-weight="400" fill="#2765B0">취침 Exit: 취기 0 / 체력 10 / 거리 0 → 다시 출근</text>
+<text x="75" y="483" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#566982">판매: 구매 불가 시 대기  |  음주: 돈 부족 또는 술 제공 거절 시 취침  |  출근·벌목·판매 완료 판정은 다음 틱</text>
+<rect x="35" y="530" width="1730" height="630" rx="14" fill="#FFFFFF" stroke="#DAE2EC" stroke-width="2"/>
+<text x="60" y="575" font-family="Malgun Gothic, sans-serif" font-size="27" font-weight="700" fill="#167769">상점주인  |  영업·휴식 + 외부 거래 + Global State</text>
+<rect x="80" y="625" width="240" height="94" rx="14" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="95" y="659" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#167769">개점</text>
+<text x="95" y="690" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Open_for_business</text>
+<rect x="440" y="625" width="250" height="115" rx="14" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="455" y="659" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#167769">영업</text>
+<text x="455" y="690" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Working</text>
+<text x="455" y="717" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">졸림·흡연 욕구 +1</text>
+<rect x="850" y="595" width="285" height="94" rx="14" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="865" y="629" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#167769">수면</text>
+<text x="865" y="660" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Sleep / 졸림 -1</text>
+<rect x="850" y="790" width="285" height="94" rx="14" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="865" y="824" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#167769">흡연</text>
+<text x="865" y="855" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Cigarette / 욕구 -1</text>
+<rect x="440" y="935" width="250" height="94" rx="14" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="455" y="969" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#167769">구매</text>
+<text x="455" y="1000" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Buying</text>
+<polyline points="320,675 440,675" fill="none" stroke="#167769" stroke-width="3"/>
+<polygon points="440,675 428.2941876694152,680.654551943446 428.2941876694152,669.345448056554" fill="#167769"/>
+<text x="334" y="658" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#167769">1행동</text>
+<polyline points="690,650 770,650 770,625 850,625" fill="none" stroke="#167769" stroke-width="3"/>
+<polygon points="850,625 838.2941876694152,630.654551943446 838.2941876694152,619.345448056554" fill="#167769"/>
+<text x="702" y="613" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#167769">sleep &gt; 10</text>
+<polyline points="850,670 795,670 795,705 690,705" fill="none" stroke="#167769" stroke-width="3"/>
+<polygon points="690,705 701.7058123305848,699.345448056554 701.7058123305848,710.654551943446" fill="#167769"/>
+<text x="706" y="735" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#167769">sleep = 0</text>
+<polyline points="600,740 600,820 850,820" fill="none" stroke="#167769" stroke-width="3"/>
+<polygon points="850,820 838.2941876694152,825.654551943446 838.2941876694152,814.345448056554" fill="#167769"/>
+<text x="615" y="799" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#167769">cigarette &gt; 5</text>
+<polyline points="850,858 755,858 755,757 670,757 670,740" fill="none" stroke="#167769" stroke-width="3"/>
+<polygon points="670,740 675.654551943446,751.7058123305848 664.345448056554,751.7058123305848" fill="#167769"/>
+<text x="825" y="913" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#167769">cigarette = 0</text>
+<polyline points="470,935 470,740" fill="none" stroke="#167769" stroke-width="3"/>
+<polygon points="470,740 475.654551943446,751.7058123305848 464.345448056554,751.7058123305848" fill="#167769"/>
+<text x="280" y="858" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#167769">EndBuying()</text>
+<rect x="80" y="935" width="270" height="115" rx="14" fill="#FFFFFF" stroke="#167769" stroke-width="2"/>
+<text x="95" y="969" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#167769">외부 거래 요청</text>
+<text x="95" y="1000" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">BeginBuying()</text>
+<text x="95" y="1027" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">화장실 외 → 구매</text>
+<polyline points="350,980 440,980" fill="none" stroke="#167769" stroke-width="3"/>
+<polygon points="440,980 428.2941876694152,985.654551943446 428.2941876694152,974.345448056554" fill="#167769"/>
+<text x="80" y="1100" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="400" fill="#566982">영업에서 휴식 조건이 겹치면 수면 우선. 거래가 끝나면 영업으로 복귀.</text>
+<rect x="1240" y="605" width="480" height="120" rx="14" fill="#FFFFFF" stroke="#B65C20" stroke-width="2"/>
+<text x="1255" y="639" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#B65C20">GlobalState.Execute</text>
+<text x="1255" y="670" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">화장실 외 매 틱 toilet +1</text>
+<text x="1255" y="697" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">toilet ≥ 10 → 화장실로 전환</text>
+<polyline points="1480,725 1480,785" fill="none" stroke="#B65C20" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="1480,785 1474.345448056554,773.2941876694152 1485.654551943446,773.2941876694152" fill="#B65C20"/>
+<text x="1250" y="763" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#B65C20">개점·영업·구매·수면·흡연 모두 적용</text>
+<rect x="1240" y="785" width="480" height="94" rx="14" fill="#FFFFFF" stroke="#B65C20" stroke-width="2"/>
+<text x="1255" y="819" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#B65C20">화장실 / Toilet</text>
+<text x="1255" y="850" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">5회 행동 → toilet = 0</text>
+<polyline points="1480,879 1480,925" fill="none" stroke="#B65C20" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="1480,925 1474.345448056554,913.2941876694152 1485.654551943446,913.2941876694152" fill="#B65C20"/>
+<rect x="1240" y="925" width="480" height="120" rx="14" fill="#FFFFFF" stroke="#B65C20" stroke-width="2"/>
+<text x="1255" y="959" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#B65C20">복귀 판단</text>
+<text x="1255" y="990" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">거래 변경 없음 → 이전 상태</text>
+<text x="1255" y="1017" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">거래 변경 있음 → 구매 요청 ? 구매 : 영업</text>
+<text x="1240" y="1088" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#566982">화장실 중 재진입 없음 / 외부 거래 요청 보류</text>
+<text x="1240" y="1115" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#566982">흡연 복귀 시 남은 진행도 유지</text>
+<rect x="35" y="1190" width="1730" height="420" rx="14" fill="#FFFFFF" stroke="#DAE2EC" stroke-width="2"/>
+<text x="60" y="1235" font-family="Malgun Gothic, sans-serif" font-size="27" font-weight="700" fill="#7251A3">주점 주인  |  작업 중단 → 손님 접대 → 이전 작업 재개</text>
+<rect x="100" y="1310" width="350" height="94" rx="14" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="115" y="1344" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#7251A3">설거지</text>
+<text x="115" y="1375" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">WashingDishes / 5회</text>
+<rect x="650" y="1310" width="350" height="94" rx="14" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="665" y="1344" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#7251A3">주점 청소</text>
+<text x="665" y="1375" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">Cleaning / 10회</text>
+<rect x="1280" y="1310" width="400" height="115" rx="14" fill="#FFFFFF" stroke="#7251A3" stroke-width="2"/>
+<text x="1295" y="1344" font-family="Malgun Gothic, sans-serif" font-size="24" font-weight="700" fill="#7251A3">손님 접대</text>
+<text x="1295" y="1375" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">ServingCustomer</text>
+<text x="1295" y="1402" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#172B46">방문·음주 상태에 따라 대화</text>
+<polyline points="450,1335 650,1335" fill="none" stroke="#7251A3" stroke-width="3"/>
+<polygon points="650,1335 638.2941876694152,1340.654551943446 638.2941876694152,1329.345448056554" fill="#7251A3"/>
+<text x="475" y="1313" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#7251A3">설거지 완료</text>
+<polyline points="650,1380 450,1380" fill="none" stroke="#7251A3" stroke-width="3"/>
+<polygon points="450,1380 461.7058123305848,1374.345448056554 461.7058123305848,1385.654551943446" fill="#7251A3"/>
+<text x="490" y="1418" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#7251A3">청소 완료</text>
+<polyline points="275,1310 275,1275 1480,1275 1480,1310" fill="none" stroke="#7251A3" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="1480,1310 1474.345448056554,1298.2941876694151 1485.654551943446,1298.2941876694151" fill="#7251A3"/>
+<polyline points="825,1310 825,1275" fill="none" stroke="#7251A3" stroke-width="3" stroke-dasharray="9 7"/>
+<text x="600" y="1260" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#7251A3">BeginVisit → 작업 진행도를 보존하고 접대</text>
+<polyline points="1480,1425 1480,1500 275,1500 275,1404" fill="none" stroke="#7251A3" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="275,1404 280.654551943446,1415.7058123305849 269.345448056554,1415.7058123305849" fill="#7251A3"/>
+<polyline points="825,1500 825,1404" fill="none" stroke="#7251A3" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="825,1404 830.654551943446,1415.7058123305849 819.345448056554,1415.7058123305849" fill="#7251A3"/>
+<text x="520" y="1530" font-family="Malgun Gothic, sans-serif" font-size="20" font-weight="400" fill="#7251A3">EndVisit → 직전 작업 하나로 복귀 (진행도 유지)</text>
+<text x="80" y="1578" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#566982">주점의 화살표 두 갈래는 동시 복귀가 아니라, 중단 전에 실행 중이던 작업으로의 선택적 복귀다.</text>
+<text x="50" y="1663" font-family="Malgun Gothic, sans-serif" font-size="18" font-weight="400" fill="#566982">현재 소스 기준 · 2026-10-11 · 실행 결과가 아닌 구조/호출 설명</text>
+</svg>

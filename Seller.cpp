@@ -12,6 +12,7 @@ namespace Seller
         RegisterState<Buying>();
         RegisterState<Sleep>();
         RegisterState<Cigarette>();
+        RegisterState<Toilet>();
 
         RegisterState<GlobalState>();
 
@@ -20,6 +21,33 @@ namespace Seller
         {
             throw std::logic_error("Failed to initialize the prototype model.");
         }
+    }
+
+    void Context::BeginBuying() noexcept
+    {
+        buyingRequested = true;
+        if (IsInState<Toilet>())
+        {
+            tradeChangedDuringToilet = true;
+            return;
+        }
+        (void)ChangeState<Buying>();
+    }
+
+    void Context::EndBuying() noexcept
+    {
+        buyingRequested = false;
+        if (IsInState<Toilet>())
+        {
+            tradeChangedDuringToilet = true;
+            return;
+        }
+        (void)ChangeState<Working>();
+    }
+
+    bool Context::CanBuyWood() const noexcept
+    {
+        return IsInState<Buying>();
     }
 
     std::string_view Open_for_business::Name() const noexcept { return "Open_for_business"; }
@@ -82,7 +110,8 @@ namespace Seller
     std::string_view Cigarette::Name() const noexcept { return "Cigarette"; }
     void Cigarette::Enter(Context& owner) noexcept { 
         std::cout << "상점주인: 담배나 한대 태우고 와야겠어." << std::endl;
-        owner.cigarette = 5;
+        if (!owner.resumingFromToilet)
+            owner.cigarette = 5;
     }
     void Cigarette::Execute(Context& owner) noexcept
     {
@@ -97,12 +126,48 @@ namespace Seller
     }
     void Cigarette::Exit(Context& owner) noexcept { std::cout << "상점주인: 다시 돌아가야지..." << std::endl; }
 
+    std::string_view Toilet::Name() const noexcept { return "Toilet"; }
+    void Toilet::Enter(Context& owner) noexcept
+    {
+        owner.toiletProgress = 0;
+        owner.tradeChangedDuringToilet = false;
+        std::cout << "상점주인: 급하군! 하던 일은 멈추고 화장실부터 가야겠어." << std::endl;
+    }
+    void Toilet::Execute(Context& owner) noexcept
+    {
+        ++owner.toiletProgress;
+        std::cout << "상점주인: 화장실 이용 중.... " << owner.toiletProgress << "/5" << std::endl;
+        if (owner.toiletProgress < 5)
+            return;
+
+        if (owner.tradeChangedDuringToilet)
+        {
+            if (owner.buyingRequested)
+                (void)owner.ChangeState<Buying>();
+            else
+                (void)owner.ChangeState<Working>();
+            return;
+        }
+        // Re-entering Cigarette must not reset its remaining progress.
+        owner.resumingFromToilet = true;
+        (void)owner.RevertToPreviousState();
+        owner.resumingFromToilet = false;
+    }
+    void Toilet::Exit(Context& owner) noexcept
+    {
+        owner.toilet = 0;
+        std::cout << "상점주인: 이제 괜찮군. 하던 일을 이어가자." << std::endl;
+    }
+
     std::string_view GlobalState::Name() const noexcept { return "Global"; }
     void GlobalState::Enter(Context&) noexcept {}
-    void GlobalState::Execute(Context&) noexcept
+    void GlobalState::Execute(Context& owner) noexcept
     {
-        //std::puts("Global.Execute");
-        // TODO: Add shared checks here if the scenario needs them.
+        if (owner.IsInState<Toilet>())
+            return;
+        ++owner.toilet;
+        if (owner.toilet >= 10)
+            (void)owner.ChangeState<Toilet>();
     }
     void GlobalState::Exit(Context&) noexcept {}
 }

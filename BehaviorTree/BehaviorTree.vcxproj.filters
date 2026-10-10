@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="BT Core"><UniqueIdentifier>{AB85A271-AB35-40C6-A1D1-21EA75AF3641}</UniqueIdentifier></Filter>
+    <Filter Include="Characters"><UniqueIdentifier>{B00CA9DE-E0EF-446D-846D-41614DE2EEED}</UniqueIdentifier></Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bt\BehaviorTree.h"><Filter>BT Core</Filter></ClInclude>
+    <ClInclude Include="bt\Blackboard.h"><Filter>BT Core</Filter></ClInclude>
+    <ClInclude Include="BlackboardKeys.h"><Filter>Characters</Filter></ClInclude>
+    <ClInclude Include="Characters.h"><Filter>Characters</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="WoodCutter.cpp"><Filter>Characters</Filter></ClCompile>
+    <ClCompile Include="Seller.cpp"><Filter>Characters</Filter></ClCompile>
+    <ClCompile Include="TavernKeeper.cpp"><Filter>Characters</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup><None Include="README.md" /></ItemGroup>
+</Project>

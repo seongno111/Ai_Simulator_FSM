@@ -4,4 +4,5 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="FSM.vcxproj" Id="8a207a09-45fc-4af2-a24c-61adf390dbbf" />
+  <Project Path="BehaviorTree/BehaviorTree.vcxproj" Id="17b4f510-e162-46ab-a106-44b578c967d2" />
 </Solution>
